@@ -51,7 +51,10 @@ python -m nia.evaluate agent         # full agent evaluation (14 questions)
 |---|---|---|
 | SQL checks vs injected anomalies | precision / recall | 1.00 / 1.00 (98 anomalies, 12 types) |
 | Retrieval (17 labelled questions) | hit@1 / hit@3 / MRR | 0.71 / 0.94 / 0.82 |
-| Agent vs SQL answer key (14 questions) | mean precision / recall, exact match | *run `python -m nia.evaluate agent`* |
+| Agent vs SQL answer key (14 questions, `claude-sonnet-5-5`) | mean precision / recall, exact match | 1.00 / 1.00, 14/14 exact |
+| Agent behaviour | doc search rate, mean tool calls, total tokens | 100%, 4.4 per question, ~131k |
+
+Caveat: the data is synthetic and the rules are clearly documented, so this is an easier setting than a real inventory. The next step is to make the eval harder: ambiguous questions, conflicting docs, and messier data.
 
 ## Project structure
 
